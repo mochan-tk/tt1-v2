@@ -10,10 +10,11 @@ Act as the planner defined in `.github/agents/planner.agent.md`, following
 Epic issue number: ${input:epicNumber}
 
 1. Read the Epic (`gh issue view ${input:epicNumber}`) and every agreement it
-   references. List any missing/contradictory agreements before planning.
+   references. Plan on what exists and flag contradictions; a missing
+   agreement is noted in the affected Task brief, not a blocker.
 2. Decompose **only the phase that is about to start** into Task issues.
    Draft each brief per `.github/ISSUE_TEMPLATE/ai-task.yml`: Objective,
-   Context & references (REQ-### links), Acceptance criteria, Out of scope,
+   Context & references (agreements if any), Acceptance criteria, Out of scope,
    File ownership, Verification, Routing.
 3. Check the partition: parallel-intended tasks must have disjoint
    File-ownership paths; overlaps get `blocked-by` edges instead.

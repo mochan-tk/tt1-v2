@@ -25,7 +25,7 @@ body:
     id: success
     attributes:
       label: Success criteria
-      description: How we will know, at Epic level. Reference REQ-### where possible.
+      description: How we will know, at Epic level. Cite REQ-### where one exists.
       value: |
         - [ ]
     validations:
@@ -53,4 +53,4 @@ body:
     id: references
     attributes:
       label: References
-      description: Agreements this Epic is grounded in (REQ-### / ADR links).
+      description: Agreements this Epic relies on (REQ-### / ADR links), if any.

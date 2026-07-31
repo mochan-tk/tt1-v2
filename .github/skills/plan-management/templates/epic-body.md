@@ -8,7 +8,7 @@
 
 ## Success criteria
 
-<!-- How we will know, at Epic level. Reference REQ-### where possible. -->
+<!-- How we will know, at Epic level. Cite REQ-### where one exists. -->
 
 - [ ]
 
@@ -30,7 +30,7 @@
 
 ## References
 
-<!-- Agreements this Epic is grounded in. -->
+<!-- Agreements this Epic relies on, if any. -->
 
 - Requirements:
 - Decisions:
