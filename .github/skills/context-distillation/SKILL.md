@@ -1,6 +1,6 @@
 ---
 name: context-distillation
-description: Turn raw material in docs/context/ into reviewed agreements (requirements with REQ-### IDs, ADRs, glossary, non-goals) and place each piece of knowledge in the right context tier — always-on instructions, path-scoped instructions, or on-demand skills/docs. Use this after collection passes, before planning an Epic, when agents keep missing the same context, or when instruction files grow bloated.
+description: Turn raw material in docs/context/ into reviewed agreements (requirements with REQ-### IDs, ADRs, glossary, non-goals) and place each piece of knowledge in the right context tier — always-on instructions, path-scoped instructions, or on-demand skills/docs. Use this when a decision must outlive the task that produced it, when agents keep missing the same context, or when instruction files grow bloated. Most tasks need no agreement at all — check the threshold in this skill before starting a distillation pass.
 ---
 
 # Context Distillation
@@ -11,6 +11,29 @@ produces `docs/agreements/`; the second decides its tier. Skipping the second
 question is the classic failure mode — stuffing everything into always-on
 instructions degrades every request a little until agents get worse, not
 better.
+
+## When an agreement is warranted
+
+Agreements exist for knowledge that must outlive the task that produced it.
+**Most changes need none** — a Task issue is a complete brief on its own, and
+routing every change through an agreements pass first is the failure mode this
+threshold prevents.
+
+| Write | Only when |
+|---|---|
+| `REQ-###` | the statement is verifiable **and** constrains more than one task |
+| ADR | reversing the decision later would be expensive — schema, protocol, external dependency, module boundary |
+| Glossary entry | the term has already been misread at least once |
+| Non-goal | someone has already proposed the thing you want to exclude |
+
+Below the bar, state the fact in the Task issue's "Context & references" and
+keep going. A **missing** agreement is not a blocker: proceed and note the gap
+on the issue. Stop and escalate (`AGENTS.md` §6) only when an existing
+agreement *contradicts* the task, or when the gap makes an acceptance criterion
+impossible to write.
+
+Distillation is just-in-time. Run a pass when the threshold above is met — not
+as a standing gate in front of every Epic.
 
 ## Outputs
 
@@ -32,9 +55,10 @@ better.
    options; a human picks. Record the pick as an ADR if it is architectural,
    or directly as the surviving `REQ` otherwise.
 4. **Write the diff, open a PR.** Agreements change only via PR with human
-   approval (`docs.instructions.md`). The PR description lists each new/changed
-   `REQ-###`/ADR with its source link. **Merge = agreement**; the review
-   thread is the negotiation record.
+   approval (`docs.instructions.md`) — but not necessarily a *dedicated* one:
+   a wording fix may ride in the implementation PR that discovered it. The PR
+   description lists each new/changed `REQ-###`/ADR with its source link.
+   **Merge = agreement**; the review thread is the negotiation record.
 5. **Tier the knowledge** (see below) and, when a tier assignment adds or
    changes instruction/skill files, include those edits in the same PR so the
    agreement and its delivery mechanism land together.

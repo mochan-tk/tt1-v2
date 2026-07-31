@@ -14,7 +14,10 @@ merge is what makes something an agreement).
 | `adr/ADR-####-<slug>.md` | One architectural decision per record |
 | `retro-log.md` | Ledger of system improvements (`retro:` PRs) |
 
-Task issues cite these by ID (`REQ-###`, `ADR-####`); acceptance criteria
-trace back here. If work reveals an agreement is wrong: stop, open a separate
-agreements PR, link the two (do not edit agreements as a side effect of an
-implementation branch).
+Task issues cite these by ID (`REQ-###`, `ADR-####`) **when a relevant
+agreement exists** — most tasks are fully specified by their own issue and cite
+nothing, which is fine. What earns a place here is defined by
+`.github/skills/context-distillation/SKILL.md` (§When an agreement is
+warranted). If work reveals an agreement is wrong, fix it: a wording fix may
+ride in the implementation PR (call it out in the description); an ADR reversal
+gets its own PR.

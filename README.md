@@ -20,7 +20,7 @@ be sharply tuned the moment a target arrives.
 |---|---|---|
 | 0. Onboard | Tune the scaffold to the project: inventory → gap interview → run-verified commands → fill every CUSTOMIZE → evidence PR | `project-onboarding` skill, `tuning-status.sh` |
 | 1. Collect | Land raw information with provenance | `docs/context/` via `context-collection` skill |
-| 2. Distill & agree | Turn raw material into reviewed truth (REQ/ADR/glossary/non-goals) via PR; place each piece of knowledge in a context tier | `docs/agreements/` via `context-distillation` skill |
+| 2. Distill & agree | *Only when a decision must outlive its task* — turn raw material into reviewed truth (REQ/ADR/glossary/non-goals) via PR; place each piece of knowledge in a context tier | `docs/agreements/` via `context-distillation` skill |
 | 3. Plan & orchestrate | Rolling-wave issue graph (Epics → just-in-time Task sub-issues, `blocked-by` ordering, actionable frontier); parent/child sessions execute it | `plan-management` + `session-orchestration` skills, issue templates |
 | 4. Route & execute | Each task carries one `exec:*` label + Routing block deciding surface, role, and model tier | `task-routing` skill, `.github/agents/` |
 | 5. Verify & learn | Layered gates (CI → security → AI review → human), evidence tables, and `retro:` PRs that improve the system itself — upstreaming what is project-agnostic | `verification` + `retro` skills, `ci.yml`, rulesets |
@@ -136,7 +136,10 @@ degrades every request a little.
    with a Blocked view; keep Project fields derived from issues.
 7. **First run:**
    - Collect sources into `docs/context/<topic>/` (`context-collection`).
-   - Run `/distill-context` → agreements PR → human merges (= agreement).
+   - Run `/distill-context` **only when** a decision must outlive the task that
+     produced it (`context-distillation`, §When an agreement is warranted) →
+     agreements PR → human merges (= agreement). Otherwise skip to the Epic and
+     let the facts live in the Task issues.
    - File an Epic (form or `templates/epic-body.md`).
    - Run `/breakdown-epic` → approve → Task issues exist, wired and routed.
    - Dispatch the frontier: `exec:cloud` → assign the issue to Copilot;

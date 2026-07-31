@@ -19,10 +19,14 @@ applyTo: "docs/**"
   `.github/skills/context-collection/SKILL.md`. Do not "clean up" raw material
   into conclusions here — that is distillation and it happens elsewhere.
 - `docs/agreements/` is **reviewed truth**: requirements (`REQ-###`), ADRs
-  (`ADR-####`), glossary, non-goals. Files here change **only via pull request**
-  with at least one human approval. Never edit them directly on a task branch
-  as a side effect of implementation work; if implementation reveals an
-  agreement is wrong, open a separate agreements PR and link the two.
+  (`ADR-####`), glossary, non-goals. What earns a place here is defined by
+  `.github/skills/context-distillation/SKILL.md` (§When an agreement is
+  warranted) — most changes belong in a Task issue instead. Files here change
+  **only via pull request** with at least one human approval, but that PR need
+  not be a dedicated one: correcting the wording of a `REQ`, glossary entry, or
+  non-goal may ride in the implementation PR that discovered the problem, as
+  long as the PR description calls the change out. Reserve a separate
+  agreements PR for ADRs and for reversals other in-flight tasks depend on.
 
 ## Traceability
 
@@ -31,6 +35,8 @@ applyTo: "docs/**"
 - ADRs are numbered sequentially from `ADR-0001` and follow
   `docs/agreements/adr/ADR-0000-template.md`. An ADR that reverses a previous
   decision must reference the ADR it supersedes.
-- When a decision is made anywhere else (issue thread, PR review, chat), it is
-  not an agreement until it lands in `docs/agreements/` through a PR. Copy the
-  conclusion, link the discussion.
+- A decision made elsewhere (issue thread, PR review, chat) becomes an
+  agreement only once it lands here through a PR — but only decisions that
+  clear the bar in `.github/skills/context-distillation/SKILL.md` (§When an
+  agreement is warranted) need to land here at all. Copy the conclusion, link
+  the discussion.
