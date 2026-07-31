@@ -32,7 +32,7 @@ Requires GitHub CLI **v2.94.0 or later** (native `--parent`, `--blocked-by`,
 2. Decompose an Epic into Task sub-issues only when its phase is about to
    start (or when the frontier is nearly empty). Detail decays; write it late.
 3. Every Task must clear the planner quality bar
-   (self-contained, traceable to `REQ-###`, bounded, partitioned, routed —
+   (self-contained, checkable, bounded, partitioned, routed —
    see `.github/agents/planner.agent.md`). Only then add `ai:ready`.
 4. Partition for parallelism: tasks meant to run concurrently must have
    disjoint **File ownership** path sets. If two tasks need the same paths,

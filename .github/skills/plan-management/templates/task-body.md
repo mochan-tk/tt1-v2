@@ -9,13 +9,17 @@
 
 ## Context & references
 
-<!-- Links the executing agent must read: REQ-### entries, ADRs, parent Epic,
-     prior PRs/issues, relevant docs/context files. Assume the agent sees
-     NOTHING beyond this issue and these links. -->
+<!-- Links the executing agent must read: parent Epic, prior PRs/issues,
+     relevant docs/context files. Cite REQ-###/ADR IDs only when such an
+     agreement already exists — otherwise state the fact here directly rather
+     than opening an agreements pass
+     (.github/skills/context-distillation/SKILL.md, §When an agreement is
+     warranted). Assume the agent sees NOTHING beyond this issue and these
+     links. -->
 
 - Epic: #
-- Requirements: REQ-
-- Decisions:
+- Agreements (if any):
+- Facts the agent needs:
 
 ## Acceptance criteria
 

@@ -11,9 +11,11 @@ criteria are met. Review the claim, not only the diff.
 
 Check, in this order:
 
-1. **Traceability.** The PR references its Task issue (`Closes #<n>`) and the
+1. **Evidence.** The PR references its Task issue (`Closes #<n>`) and the
    evidence table maps every acceptance criterion to a command, link, or
-   artifact. Criteria without evidence: request changes.
+   artifact. Criteria without evidence: request changes. `REQ-###`/ADR
+   citations are expected only where such an agreement already exists — their
+   absence is not a finding.
 2. **Ownership.** The diff stays inside the paths declared in the issue's
    "File ownership" section. Out-of-scope files — even improvements — mean the
    plan and the work disagree: request changes and suggest `needs:replan`.

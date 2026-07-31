@@ -34,5 +34,5 @@ in order) and `.github/skills/verification/SKILL.md` (how to check it).
      before — recommend a `retro:` instructions/skill change instead of
      repeating the comment forever.
 
-Stay proportionate: block on correctness, traceability, ownership, and safety;
+Stay proportionate: block on correctness, evidence, ownership, and safety;
 mention style only when it obscures meaning or violates a written instruction.

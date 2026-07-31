@@ -28,9 +28,12 @@ child so parallel sessions cannot write to the same checkout.
 **Start ritual** (do this before touching any file):
 1. `gh issue view <n>` — read the full brief: Objective, Context & references,
    Acceptance criteria, Out of scope, File ownership, Verification, Routing.
-2. Open every referenced agreement (`REQ-###`, ADR links). If a reference is
-   missing or contradicts the issue, stop and apply the Ambiguity rule
-   (`AGENTS.md` §6) — do not fill gaps with guesses.
+2. Open every agreement the issue references (`REQ-###`, ADR links). A
+   **missing** reference is not a blocker — note the gap in your start comment
+   and proceed. Stop and apply the Ambiguity rule (`AGENTS.md` §6) only when a
+   reference *contradicts* the issue, or when the gap makes an acceptance
+   criterion impossible to write. Do not open an agreements pass just to have
+   something to cite (`context-distillation` §When an agreement is warranted).
 3. Write `plan.md` in the worktree root: restate the acceptance criteria, the
    ownership paths, the verification commands, and your step plan. `plan.md`
    is a **session cache** — convenient, disposable, never authoritative, and

@@ -17,7 +17,7 @@ details Copilot needs to work efficiently in this repository.
      - `server/`    — API server. Entry point `server/src/index.ts`.
      - `app/`       — client app.
      - `docs/context/`    — raw collected material (read for background).
-     - `docs/agreements/` — reviewed decisions (read before designing anything).
+     - `docs/agreements/` — reviewed decisions (read when the task references them).
 -->
 - `docs/context/` — raw collected material.
 - `docs/agreements/` — reviewed requirements, ADRs, glossary, non-goals.

@@ -46,7 +46,10 @@ Follow `AGENTS.md` and these skills as your operating manual:
 
 ## Escalate to a human instead of deciding yourself
 
-- Any change to `docs/agreements/` content (requirements, ADRs, non-goals).
+- Introducing or reversing an agreement in `docs/agreements/` — a new `REQ`, or
+  a new/superseding ADR. Wording fixes to existing entries ride the
+  implementation PR and are covered by its human approval
+  (`.github/instructions/docs.instructions.md`).
 - Deleting more than a trivial amount of work, or closing an Epic early.
 - Security-relevant findings, credential exposure, or firewall/ruleset issues.
 - Two consecutive failed attempts by agents on the same task.

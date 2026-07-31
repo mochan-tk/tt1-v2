@@ -9,8 +9,9 @@ Follow the child session protocol in
 Task issue number: ${input:issueNumber}
 
 1. `gh issue view ${input:issueNumber}` — read the complete brief.
-2. Open every referenced agreement/REQ/ADR. If anything is missing or
-   contradictory, stop and raise it with me instead of guessing
+2. Open every referenced agreement/REQ/ADR. Note missing references in the
+   start comment and proceed; stop and raise it with me only when a reference
+   contradicts the issue or an acceptance criterion cannot be written
    (Ambiguity rule, `AGENTS.md`).
 3. Restate back to me, briefly: the acceptance criteria, the File-ownership
    paths, and the Verification commands — so we both confirm the same
