@@ -13,8 +13,8 @@ Ground rules (summary — the skill is authoritative):
 - Every file starts with the provenance header (source / retrieved / method /
   collector / sensitivity / status). `status: raw` until a distillation pass
   marks it `distilled`.
-- Nothing here is authoritative. Agents may read it for background but must
-  design against `docs/agreements/` only.
+- Nothing here is authoritative. Agents may read it for background; design
+  against the Task issue and any relevant agreements it cites.
 - Completeness beats tidiness; never "clean up" raw material into
   conclusions here — that is distillation
   (`.github/skills/context-distillation/SKILL.md`).
