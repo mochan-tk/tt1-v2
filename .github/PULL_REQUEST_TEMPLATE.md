@@ -1,5 +1,8 @@
 Closes #<!-- Task issue number (required — AGENTS.md, unit of work) -->
 
+Plan: <!-- link to the plan comment on the Task issue (plan of record —
+session-orchestration skill; plan text auto-written here is a copy) -->
+
 ## Summary
 
 <!-- 2–4 sentences: what changed and why, in terms of the Task's Objective. -->
@@ -31,6 +34,8 @@ None.
 
 ## Checklist
 
+- [ ] Plan was posted as a Task-issue comment before implementation and is
+      linked above.
 - [ ] Diff stays inside the issue's **File ownership** paths (single-writer rule).
 - [ ] Every command in the issue's **Verification** section was run; output captured above.
 - [ ] No test, lint rule, or CI check was deleted, skipped, or weakened.

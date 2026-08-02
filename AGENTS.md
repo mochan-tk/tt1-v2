@@ -23,8 +23,10 @@ GitHub, never your conversation.
 Finish (or abort) by writing the structured outcome on the durable record
 first — a comment on the Task issue and the PR description — and only then
 send the session message to your parent session or the human. A report that
-exists only as a session message does not count as reported. The comment
-format is defined in `.github/skills/session-orchestration/SKILL.md`.
+exists only as a session message does not count as reported. The rule covers
+the start as well: the working plan is posted as a comment on the Task issue
+before implementation begins. The comment formats are defined in
+`.github/skills/session-orchestration/SKILL.md`.
 
 ### §3 Verify-before-done
 Never claim a state you have not verified in this session against ground
@@ -45,7 +47,9 @@ Modify only paths inside the **File ownership** section of your Task issue.
 Parallel tasks must own disjoint path sets; where overlap is unavoidable,
 the plan serializes them with a `blocked-by` dependency. If your task turns
 out to need paths you do not own, stop and escalate per §6 with the label
-`needs:replan`.
+`needs:replan`. The same discipline covers the work order itself: the Task
+issue body belongs to the requester — an executing agent never edits its own
+Task issue's body and writes to the issue timeline (comments) instead.
 
 ### §6 Ambiguity rule
 Escalate, don't guess. When requirements are ambiguous or contradictory,

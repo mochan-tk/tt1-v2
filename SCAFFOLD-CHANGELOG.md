@@ -5,7 +5,7 @@ template. This file tracks which template version the instance adopted and
 how to move between versions. The project's own changelog, if any, lives
 elsewhere — this file is about the scaffolding only.
 
-**Scaffold version adopted by this instance:** v0.5.0
+**Scaffold version adopted by this instance:** v0.6.0
 *(update this line when upgrading; the onboarding PR should confirm it)*
 
 ## Upgrading an instance
@@ -28,6 +28,29 @@ repository and mark the retro-log Fix cell `[upstreamed]` — see
 inherit what this one learned.
 
 ## Versions
+
+### v0.6.0 — 2026-08-02
+
+Plan-comment landing (ADLC design review): a task's timeline becomes the
+single diagnosis trail — work order (body, requester-owned) → start → plan
+→ outcome — so "it did not do what I meant" can be traced from one page.
+
+- session-orchestration skill: the working plan lands as a Task-issue
+  comment before the first commit; material plan changes land as new
+  comments (never edits); PR descriptions link the plan comment, and
+  surface-written plan text in a PR description is a copy, never
+  authoritative. `plan.md` stays an untracked per-session cache.
+- AGENTS.md §2/§5: the record-before-report rule now covers the start
+  (plan comment before implementation); an executing agent never edits its
+  own Task issue body — the body is the requester-owned work order.
+- plan-management skill: every Task-body edit requires an immediate change
+  comment (what / why / replan needed) because body edit history never
+  shows in the timeline; new anti-pattern "silent work-order edits".
+- copilot-instructions, PR template (Plan link + checklist item), and
+  README aligned with the above.
+- Seeded as `retro:candidate` (not yet built): an Action that auto-comments
+  the diff when an issue body is edited — promote after a second observed
+  silent edit.
 
 ### v0.5.0 — 2026-07-04
 

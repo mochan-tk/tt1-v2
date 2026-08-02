@@ -39,10 +39,22 @@ child so parallel sessions cannot write to the same checkout.
 4. Comment one line on the issue: `Starting in session <name/link>, branch
    task/<n>-<slug>` (or the accepted tool-prefixed variant, AGENTS.md §4).
    Now the world knows this task is taken.
+5. Post the plan as a comment on the Task issue **before your first
+   commit**: goal restated, intended approach, files you expect to touch,
+   verification you will run. This comment — not `plan.md`, not the PR
+   description — is the plan of record. The timeline then reads work order
+   (body) → start → plan → outcome, which is what makes deviations
+   diagnosable from one page.
+
+Surfaces that write a plan into the PR description automatically (e.g. the
+cloud agent) produce a convenient copy: link the plan comment from the PR
+description and treat the issue timeline as authoritative.
 
 **Work loop:** stay inside the ownership paths; commit early and often;
-update `plan.md` freely; if scope drifts, stop and follow the Ambiguity rule
-rather than quietly expanding.
+update `plan.md` freely — and when the plan changes *materially*, post a
+fresh plan comment on the issue (never edit the old one; the sequence of
+plan comments is the plan's history). If scope drifts, stop and follow the
+Ambiguity rule rather than quietly expanding.
 
 **Verify** (before any completion claim): run every command in the issue's
 Verification section; then confirm external state with commands, e.g.
