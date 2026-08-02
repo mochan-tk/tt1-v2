@@ -133,7 +133,12 @@ the Epic is unfinished.
 3. For each affected issue decide: **keep / modify / split / add / close**.
    Apply the decisions with `gh issue edit` / `create` / `close` — edit the
    graph, don't just talk about it. Closed-as-obsolete issues get a one-line
-   reason; never delete issues (history is the audit trail).
+   reason; never delete issues (history is the audit trail). Every edit to a
+   Task issue's **body** gets an immediate change comment on that issue:
+   what changed, why, and whether in-flight work must replan. GitHub keeps
+   body edit history behind the *edited* dropdown, but it never appears in
+   the timeline — the change comment is what keeps the diagnosis trail
+   readable top to bottom.
 4. Remove `ai:ready` from any task whose brief is no longer accurate; restore
    it only after the brief is fixed.
 5. Post one rationale comment on the Epic: what changed, why, and the list of
@@ -148,6 +153,9 @@ the Epic is unfinished.
 - **Hidden ordering** in prose ("do this after the API lands") without a
   `blocked-by` edge — invisible to frontier computation, so it *will* be
   violated by a parallel dispatch.
+- **Silent work-order edits** — changing a Task issue's body without the
+  change comment above. The timeline no longer explains what the executing
+  agent saw at each point, so deviations stop being diagnosable.
 - **Plan-in-a-file drift** — maintaining the real plan in a `plan.md` while
   issues rot. Session-local plan files are caches (see
   `session-orchestration`); the graph is the truth.

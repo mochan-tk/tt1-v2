@@ -48,23 +48,30 @@ Run steps in this order. Do not improvise alternative commands when these work.
 
 ## Working a Task issue
 
-The Task issue body is your work order. It follows
+The Task issue body is your work order: you read it, you never edit it
+(AGENTS.md §5). It follows
 `.github/ISSUE_TEMPLATE/ai-task.yml` and contains: Objective, Context &
 references, Acceptance criteria, Out of scope, File ownership, Verification,
 and Routing. Read all of it before writing code.
 
 1. Comment on the issue that you are starting (one line is enough).
-2. Work on branch `task/<issue-number>-<short-slug>`. Touch only paths listed
+2. Before changing any file, post your implementation plan as a comment on
+   the issue — the plan of record (format:
+   `.github/skills/session-orchestration/SKILL.md`). If the plan changes
+   materially later, post an update comment.
+3. Work on branch `task/<issue-number>-<short-slug>`. Touch only paths listed
    under **File ownership**.
-3. Keep the PR description synchronized with reality: map each acceptance
-   criterion to evidence using the table in the PR template.
-4. Run every command in the issue's **Verification** section before marking the
+4. Keep the PR description synchronized with reality: map each acceptance
+   criterion to evidence using the table in the PR template, and link the
+   plan comment (auto-written plan text in the description is a copy — the
+   issue comment stays authoritative).
+5. Run every command in the issue's **Verification** section before marking the
    PR ready. If a command fails, fix the cause or report the blocker — never
    delete or weaken the check.
-5. If the task turns out to be materially different from its description,
+6. If the task turns out to be materially different from its description,
    follow the Ambiguity rule in `AGENTS.md` (comment, label `needs:human` or
    `needs:replan`, stop).
-6. Finish with the record-before-report comment on the issue: status, evidence,
+7. Finish with the record-before-report comment on the issue: status, evidence,
    deviations, follow-ups (format in
    `.github/skills/session-orchestration/SKILL.md`).
 

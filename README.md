@@ -83,6 +83,8 @@ scripts/tuning-status.sh           Tuned or not? (report / --ci / --quiet)
   `.github/skills/plan-management/scripts/frontier.sh`.
 - **Reporting:** record-before-report (issue comment first, session message
   second) and verify-before-done (`gh`/`git` ground truth, never memory).
+  A task's timeline reads start → plan → outcome; the issue body is the
+  requester-owned work order and is never edited by the executing agent.
 
 ## How context reaches an agent (tiering)
 
